@@ -1,0 +1,6 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdbs)\\MSSQLLocalDB;Database=TORRENT;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
+

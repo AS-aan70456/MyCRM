@@ -4,4 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\Entity\" />
+    <Folder Include="Domain\Reposetory\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="Views\Record\" />
+    <Folder Include="Views\Register\" />
+  </ItemGroup>
+
 </Project>

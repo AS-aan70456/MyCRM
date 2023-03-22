@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    @await Html.PartialAsync("MetaPartial.cshtml")
+    @await Html.PartialAsync("CssPartial.cshtml")
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div>
+        <div class="app-main-layout">
+
+            @await Html.PartialAsync("NavbarPartial.cshtml")
+            @await Html.PartialAsync("SidebarPartial.cshtml")
+
+            <main class="app-content">
+                <div class="app-page">
+
+                    @RenderBody()
+
+                </div>
+            </main>
+
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large blue" href="#">
+                    <i class="large material-icons">add</i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("JavaScriptPartial.cshtml")
+</body>
+</html>
+
+
