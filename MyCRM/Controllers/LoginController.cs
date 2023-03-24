@@ -5,16 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace MyCRM.Controllers{
-    public class HomeController : Controller{
+    public class LoginController : Controller{
 
-        public ActionResult Home() {
+        public IActionResult Login(){
             return View();
         }
-
-        [HttpGet]
-        public IActionResult Index(){
-            return View();
-        }
-
     }
 }

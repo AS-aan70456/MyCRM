@@ -41,3 +41,12 @@ C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\MyCRM.cspro
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\NavbarPartial.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\SidebarPartial.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Categories\Categories.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Detail-record\Detail-record.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\History\History.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Login\Login.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Planning\Planning.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Profile\Profile.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Record\Record.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Register\Register.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs

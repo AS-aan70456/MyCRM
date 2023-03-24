@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Area\Admin\" />
+    <Folder Include="Area\Client\" />
     <Folder Include="Domain\Entity\" />
     <Folder Include="Domain\Reposetory\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="Views\Record\" />
-    <Folder Include="Views\Register\" />
+    <Folder Include="Views\Server\" />
   </ItemGroup>
 
 </Project>
