@@ -1,0 +1,16 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    @await Html.PartialAsync("MetaPartial.cshtml")
+    @await Html.PartialAsync("CssPartial.cshtml")
+    <title>Autorization</title>
+</head>
+<body>
+    <div>
+        <div class="grey darken-1 empty-layout">
+            @RenderBody()
+        </div>
+    </div>
+    @await Html.PartialAsync("JavaScriptPartial.cshtml")
+</body>
+</html>

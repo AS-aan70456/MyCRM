@@ -1,8 +1,8 @@
 ﻿
-document.getElementById('bnts').onclick = windowOnloadAdd;
+window.onload = (event) => {
+    
 
-function windowOnloadAdd() {
-    $.get("Home/Index", function (data) {
-        document.getElementById('DataTime').html(data);
-    });
-}
+    //$.get("Server/DataTime", function (data) {
+    //    document.getElementById('DataTimes').innerHTML = data;
+    //});
+};

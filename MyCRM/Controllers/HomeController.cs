@@ -7,12 +7,7 @@ using System.Threading.Tasks;
 namespace MyCRM.Controllers{
     public class HomeController : Controller{
 
-        public ActionResult Home() {
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult Index(){
+        public IActionResult Home() {
             return View();
         }
 

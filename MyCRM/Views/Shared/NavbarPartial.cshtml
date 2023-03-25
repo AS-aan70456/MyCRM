@@ -4,7 +4,7 @@
             <a href="#">
                 <i class="material-icons black-text">dehaze</i>
             </a>
-            <span id="DataTime" class="black-text">12.12.12</span>
+            <span id="DataTimes" class="black-text">@DateTime.Now.Year.@DateTime.Now.Month.@DateTime.Now.Day</span>
         </div>
 
         <ul class="right hide-on-small-and-down">
@@ -12,7 +12,7 @@
                 <a class="dropdown-trigger black-text"
                    href="#"
                    data-target="dropdown">
-                    USER NAME
+                    @User.Identity.Name
                     <i class="material-icons right">arrow_drop_down</i>
                 </a>
 

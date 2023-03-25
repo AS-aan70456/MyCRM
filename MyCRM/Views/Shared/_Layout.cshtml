@@ -11,12 +11,23 @@
     <div>
         <div class="app-main-layout">
 
+
+
             @await Html.PartialAsync("NavbarPartial.cshtml")
             @await Html.PartialAsync("SidebarPartial.cshtml")
 
             <main class="app-content">
                 <div class="app-page">
-
+                    @{
+                        <div>Author : </div>
+                        if (User.Identity.IsAuthenticated){
+                            <div>Yes</div>
+                        }
+                        else{
+                            <div>No</div>
+                        }
+                        
+                    }
                     @RenderBody()
 
                 </div>
@@ -30,8 +41,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="~/js/JavaScript.js"></script>
+    @await Html.PartialAsync("JavaScriptPartial.cshtml")
 </body>
 </html>
 

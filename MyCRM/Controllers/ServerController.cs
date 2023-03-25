@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace MyCRM.Controllers{
     public class ServerController : Controller{
-        [HttpGet]
-        public IActionResult DataTime(){
-            return View();
-        }
+        
     }
 }

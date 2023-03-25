@@ -12,10 +12,40 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 1 "C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\Views\_ViewImports.cshtml"
+using MyCRM.ViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bd0c8e1f204e346c3a2920dc1bf829716b909c90", @"/Views/Categories/Categories.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57218c316b6921e2cd61027a2387edc31a2d9471", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"898ce3f556d83a700b0294b8d2adee68fac90175", @"/Views/_ViewImports.cshtml")]
     public class Views_Categories_Categories : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
+        #line hidden
+        #pragma warning disable 0649
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
+        #pragma warning restore 0649
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner __tagHelperRunner = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner();
+        #pragma warning disable 0169
+        private string __tagHelperStringValueBuffer;
+        #pragma warning restore 0169
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __backed__tagHelperScopeManager = null;
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __tagHelperScopeManager
+        {
+            get
+            {
+                if (__backed__tagHelperScopeManager == null)
+                {
+                    __backed__tagHelperScopeManager = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager(StartTagHelperWritingScope, EndTagHelperWritingScope);
+                }
+                return __backed__tagHelperScopeManager;
+            }
+        }
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -92,12 +122,13 @@ namespace AspNetCore
                                         <h4>Создать</h4>
                                     </div>
 
-                                    <form>
+                                    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd0c8e1f204e346c3a2920dc1bf829716b909c906170", async() => {
+                WriteLiteral(@"
                                         <div class=""input-field"">
                                             <input id=""name""
                                                    type=""text"">
-                                            <lab");
-            WriteLiteral(@"el for=""name"">Название</label>
+                                            <label for=""name"">Название</label>
                                             <span class=""helper-text invalid"">Введите название</span>
                                         </div>
 
@@ -110,22 +141,47 @@ namespace AspNetCore
 
                                         <button class=""btn waves-effect waves-light"" type=""submit"">
                                             Создать
-                                            <i class=""material-icons right"">send</i>
-                                        </button>
-                                    </form>
+         ");
+                WriteLiteral("                                   <i class=\"material-icons right\">send</i>\r\n                                        </button>\r\n                                    ");
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral(@"
                                 </div>
-                            </d");
-            WriteLiteral(@"iv>
+                            </div>
                             <div class=""col s12 m6"">
                                 <div>
                                     <div class=""page-subtitle"">
                                         <h4>Редактировать</h4>
                                     </div>
 
-                                    <form>
-                                        <div class=""input-field"">
-                                            <select>
-                                                <option>Category</option>
+                                    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd0c8e1f204e346c3a2920dc1bf829716b909c909034", async() => {
+                WriteLiteral("\r\n                                        <div class=\"input-field\">\r\n                                            <select>\r\n                                                ");
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd0c8e1f204e346c3a2920dc1bf829716b909c909467", async() => {
+                    WriteLiteral("Category");
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_OptionTagHelper);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                WriteLiteral(@"
                                             </select>
                                             <label>Выберите категорию</label>
                                         </div>
@@ -134,8 +190,7 @@ namespace AspNetCore
                                             <input type=""text"" id=""name"">
                                             <label for=""name"">Название</label>
                                             <span class=""helper-text invalid"">TITLE</span>
-             ");
-            WriteLiteral(@"                           </div>
+                                        </div>
 
                                         <div class=""input-field"">
                                             <input id=""limit""
@@ -144,11 +199,26 @@ namespace AspNetCore
                                             <span class=""helper-text invalid"">LIMIT</span>
                                         </div>
 
-                                        <button class=""btn waves-effect waves-light"" type=""submit"">
+                                        <button class=""bt");
+                WriteLiteral(@"n waves-effect waves-light"" type=""submit"">
                                             Обновить
                                             <i class=""material-icons right"">send</i>
                                         </button>
-                                    </form>
+                                    ");
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral(@"
                                 </div>
                             </div>
                         </div>
@@ -159,8 +229,13 @@ namespace AspNetCore
             </div>
         </main>
 
-        <div class=""fixed-");
-            WriteLiteral("action-btn\">\r\n            <a class=\"btn-floating btn-large blue\" href=\"#\">\r\n                <i class=\"large material-icons\">add</i>\r\n            </a>\r\n        </div>\r\n    </div>\r\n</div>");
+        <div class=""fixed-action-btn"">
+            <a class=""btn-floating btn-large blue"" href=""#"">
+                <i class=""large material-icons"">add</i>
+            </a>
+        </div>
+    </div>
+</div>");
         }
         #pragma warning restore 1998
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

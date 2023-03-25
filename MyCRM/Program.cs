@@ -22,5 +22,7 @@ namespace MyCRM
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        
     }
 }
