@@ -7,6 +7,7 @@
 <form asp-controller="Account" asp-action="Register" method="post" class="card auth-card">
     <div class="card-content">
         <span class="card-title">Домашняя бухгалтерия</span>
+        <input hidden asp-for="ReturnUrl" />
         <div class="input-field">
             <input asp-for="UserName" ,
                    id="name"
