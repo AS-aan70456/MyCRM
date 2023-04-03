@@ -100,3 +100,4 @@ C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\IdentityMod
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\IdentityServer4.dll
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\IdentityServer4.Storage.dll
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\SideWarpPartial.cshtml.g.cs

@@ -6,35 +6,25 @@
     <title>Document</title>
 </head>
 
-
 <body>
+
+    @await Html.PartialAsync("SideWarpPartial.cshtml")
+
     <div>
         <div class="app-main-layout">
-
-
 
             @await Html.PartialAsync("NavbarPartial.cshtml")
             @await Html.PartialAsync("SidebarPartial.cshtml")
 
-            <main class="app-content">
+            <main id="main" class="app-content">
                 <div class="app-page">
-                    @{
-                        <div>Author : </div>
-                        if (User.Identity.IsAuthenticated){
-                            <div>Yes</div>
-                        }
-                        else{
-                            <div>No</div>
-                        }
-                        
-                    }
                     @RenderBody()
 
                 </div>
             </main>
 
             <div class="fixed-action-btn">
-                <a class="btn-floating btn-large blue" href="#">
+                <a class="btn-floating btn-large blue" href="/Record">
                     <i class="large material-icons">add</i>
                 </a>
             </div>

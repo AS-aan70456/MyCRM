@@ -1,19 +1,21 @@
-﻿<div class="page-title">
+﻿@model HomeViewModel
+
+<div class="page-title">
     <h3>Счет</h3>
 
-    <button id="bnts" class="btn waves-effect waves-light btn-small">
+    <a href="/Home" class="btn waves-effect waves-light btn-small">
         <i class="material-icons">refresh</i>
-    </button>
+    </a>
 </div>
 
 <div class="row">
     <div class="col s12 m6 l4">
         <div class="card light-blue bill-card">
             <div class="card-content white-text">
-                <span class="card-title">Счет в валюте</span>
+                <span class="card-title">Счет</span>
 
-                <p class="currency-line">
-                    <span>12.0 Р</span>
+                <p id="bill" class="currency-line">
+                    <span>@(Model.bill.ToString("c"))</span>
                 </p>
             </div>
         </div>
@@ -30,15 +32,31 @@
                         <tr>
                             <th>Валюта</th>
                             <th>Курс</th>
-                            <th>Дата</th>
+                            <th>Счет в валюте</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td>руб</td>
-                            <td>12121</td>
-                            <td>12.12.12</td>
+                            <td>долари</td>
+                            <td id="RateUSA">@Model.USA</td>
+                            <td>@((int)(@Model.bill / @Model.USA))$</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>евро</td>
+                            <td id="RateEUR">@Model.EUR</td>
+                            <td>@((int)(@Model.bill / @Model.EUR))€</td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td>гривни</td>
+                            <td id="RateUAH">@Model.UAH</td>
+                            <td>@((int)(@Model.bill / @Model.UAH))₴</td>
                         </tr>
                     </tbody>
                 </table>

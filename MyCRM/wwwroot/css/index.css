@@ -177,3 +177,27 @@
     max-width: 600px;
     margin: 0 auto
 }
+
+.action {
+    color: grey;
+    transition: background-color .3s linear, color .3s linear;
+}
+
+.sideAccount {
+    padding: 0px;
+    position: absolute;
+    right: 250px;
+    top: 0px;
+    height: 0%;
+    background-color: white;
+}
+
+    .sideAccount .sidenav {
+        padding: 0px;
+    }
+
+.AccountOpen {
+    height: 30%;
+}
+
+

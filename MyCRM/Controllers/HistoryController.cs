@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 namespace MyCRM.Controllers{
     [Authorize]
     public class HistoryController : Controller{
-        
         public IActionResult History(){
             return View();
         }

@@ -1,15 +1,15 @@
-﻿<nav class="navbar orange lighten-1">
+﻿<nav id="sidebars" class="navbar orange lighten-1">
     <div class="nav-wrapper">
         <div class="navbar-left">
-            <a href="#">
+            <a id="SidebarIsOpent" href="#">
                 <i class="material-icons black-text">dehaze</i>
             </a>
-            <span id="DataTimes" class="black-text">@DateTime.Now.Year.@DateTime.Now.Month.@DateTime.Now.Day</span>
+            <span id="DataTimes" class="black-text">@DateTime.Now.Day.@DateTime.Now.Month.@DateTime.Now.Year</span>
         </div>
 
         <ul class="right hide-on-small-and-down">
             <li>
-                <a class="dropdown-trigger black-text"
+                <a id="USERNAME" class="dropdown-trigger black-text"
                    href="#"
                    data-target="dropdown">
                     @User.Identity.Name

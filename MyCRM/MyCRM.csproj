@@ -7,9 +7,6 @@
   <ItemGroup>
     <Folder Include="Area\Admin\" />
     <Folder Include="Area\Client\" />
-    <Folder Include="Domain\Entity\" />
-    <Folder Include="Domain\Reposetory\interfeises\" />
-    <Folder Include="Domain\Reposetory\RepModel\" />
     <Folder Include="Views\Server\" />
   </ItemGroup>
 

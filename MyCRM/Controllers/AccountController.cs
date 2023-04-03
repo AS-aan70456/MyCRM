@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServer4.Services;
-//using MyCRM.Domain.Reposetory.interfeises;
+using MyCRM.Domain.Reposetory.interfeises;
 using MyCRM.ViewModel;
-//using MyCRM.Domain.Entity;
+using MyCRM.Domain.Entity;
 using System.Linq;
 using MyCRM.Service;
 using System.Security.Claims;
@@ -18,42 +18,77 @@ namespace MyCRM.Controllers
     [AllowAnonymous]
     public class AccountController : Controller {
 
-        //private readonly UserManager<IdentityUser> userManager;
-        //private readonly SignInManager<IdentityUser> signInManager;
+        public IAllUsers UsersRep { get; set; }
 
-        public AccountController() {
-            
+        public AccountController(IAllUsers Users) {
+            this.UsersRep = Users;
         }
 
         [HttpGet]
         public IActionResult Login() => View(new LoginViewModel());
+
         [HttpGet]
         public IActionResult Register() => View(new RegisterViewModel());
 
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model){
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model);
 
-            var claims = new List<Claim>{
-                new Claim("Demo","Vaule")
-            };
-            var claimIdentity = new ClaimsIdentity(claims, "Cookie");
-            var claimPrincipal = new ClaimsPrincipal(claimIdentity);
-            await HttpContext.SignInAsync("Cookie", claimPrincipal);
-            return Redirect("/Home/Home");
+            var user = UsersRep.GetUser().FirstOrDefault(x => x.Name == model.UserName);
+            if (user == null){
+                ModelState.AddModelError("UserName", "Неверний логин");
+                return View(model);
+            }
+            if (user.Password != HashPasswordHelper.HashPassword(model.password)){
+                ModelState.AddModelError("password", "Неверний пароль");
+                return View(model);
+            }
+
+            ClaimsIdentity claims = Autheticate(user);
+             await HttpContext.SignInAsync("Cookie", new ClaimsPrincipal(claims));
+
+            return RedirectToAction("Home", "Home");
         }
         
         [HttpPost]
-        public IActionResult Register(RegisterViewModel model){
-            if (!ModelState.IsValid) return View(model);
+        public async Task<IActionResult> Register(RegisterViewModel model){
+            if (!ModelState.IsValid)
+                return View(model);
 
-            return Redirect("/Home/Home");
+            var user = UsersRep.GetUser().FirstOrDefault(i => i.Name == model.UserName);
+            if (user != null) {
+                ModelState.AddModelError("UserName", "Логин уже занят");
+                return View(model);
+            }
+
+            var newUser = new User(){
+                Name = model.UserName,
+                Password = HashPasswordHelper.HashPassword(model.password),
+                Email = model.Email,
+                bill = 0,
+                Role = Role.User
+            };
+
+            UsersRep.SaveUser(newUser);
+            ClaimsIdentity claims = Autheticate(newUser);
+            await HttpContext.SignInAsync("Cookie", new ClaimsPrincipal(claims));
+
+            return RedirectToAction("Home","Home");
         }
 
-        [ValidateAntiForgeryToken]
+        [Authorize]
         public IActionResult Logout() {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
 
-            return View();
+        }
+
+        private ClaimsIdentity Autheticate(User user) {
+            var claims = new List<Claim>() {
+                new Claim(ClaimsIdentity.DefaultNameClaimType,user.Name),
+            };
+            return new ClaimsIdentity(claims, "Cookie");
         }
 
     }

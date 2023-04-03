@@ -1,14 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MyCRM.Domain;
-//using MyCRM.Domain.Reposetory.interfeises;
-//using MyCRM.Domain.Reposetory.RepModel;
+using MyCRM.Domain.Reposetory.interfeises;
+using MyCRM.Domain.Reposetory.RepModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +24,9 @@ namespace MyCRM{
         public void ConfigureServices(IServiceCollection services){
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-           //services.AddTransient<IAllUsers, UsersReposetory>();
+            services.AddTransient<IAllUsers, UsersReposetory>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-
 
             services.AddMvc();
             services.AddMemoryCache();
@@ -37,12 +34,12 @@ namespace MyCRM{
 
             services.AddAuthentication("Cookie").AddCookie("Cookie", config => {
                 config.LoginPath = "/Account/Login";
-            
             });
             services.AddAuthorization();
 
 
             services.AddControllersWithViews().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+
         }
 
         
