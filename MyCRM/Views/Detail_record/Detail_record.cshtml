@@ -1,0 +1,47 @@
+﻿@model Record_deteilViewModel
+
+<div>
+    <div>
+        <div class="breadcrumb-wrap">
+            <a href="/history" class="breadcrumb">История</a>
+            <a class="breadcrumb">
+                Доход
+            </a>
+        </div>
+        @{
+            if (@Model.Record.Income)
+            {
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card green">
+                            <div class="card-content white-text">
+                                <p>Описание:   @Model.Record.Name</p>
+                                <p>Сумма:      @Model.Record.Pirse</p>
+                                <p>Категория:  @Model.Record.NameCategory</p>
+
+                                <small>@Model.Record.DataCreate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div class="card red">
+                            <div class="card-content white-text">
+                                <p>Описание:   @Model.Record.Name</p>
+                                <p>Сумма:      @Model.Record.Pirse</p>
+                                <p>Категория:  @Model.Record.NameCategory</p>
+
+                                <small>@Model.Record.DataCreate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+

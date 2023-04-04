@@ -2,23 +2,22 @@
 
 namespace MyCRM.Migrations
 {
-    public partial class bill : Migration
+    public partial class History : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "bill",
-                table: "Users",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
+            migrationBuilder.AddColumn<string>(
+                name: "NameCategory",
+                table: "Records",
+                type: "nvarchar(max)",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "bill",
-                table: "Users");
+                name: "NameCategory",
+                table: "Records");
         }
     }
 }

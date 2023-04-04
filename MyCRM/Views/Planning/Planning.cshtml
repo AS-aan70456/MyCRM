@@ -1,19 +1,35 @@
-﻿<div>
+﻿@model PlanningViewModel
+
+<div>
     <div class="page-title">
         <h3>Планирование</h3>
-        <h4>12 212</h4>
+        <h4>@Model.planmoney.ToString("C")</h4>
     </div>
+    @{ foreach (var el in Model.allCategory)
+        {
+            <section>
+                <div>
+                    <p>
+                        <strong>@el.Name:</strong>
+                        @el.bill из @el.Limit
+                    </p>
+                    <div class="progress">
+                        @if (((float)el.bill) / ((float)el.Limit) < 0.4)
+                        {
+                            <div class="determinate green" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
+                        }
+                        else if (((float)el.bill) / ((float)el.Limit) > 0.8){
+                            <div class="determinate red" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
+                        }else {
+                            <div class="determinate yellow" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
+                        }
 
-    <section>
-        <div>
-            <p>
-                <strong>Девушка:</strong>
-                12 122 из 14 0000
-            </p>
-            <div class="progress">
-                <div class="determinate green"
-                     style="width:40%"></div>
-            </div>
-        </div>
-    </section>
+
+                    </div>
+                </div>
+            </section>
+        }
+    }
+
+
 </div>

@@ -7,6 +7,7 @@
   <ItemGroup>
     <Folder Include="Area\Admin\" />
     <Folder Include="Area\Client\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Views\Server\" />
   </ItemGroup>
 

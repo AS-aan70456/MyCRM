@@ -1,22 +1,14 @@
-﻿
+﻿@model RecordViewModel
 <div>
     <div class="page-title">
         <h3>Новая запись</h3>
     </div>
 
-    <form class="form">
-        <div class="input-field">
-            <select>
-                <option>
-                    name cat
-                </option>
-            </select>
-            <label>Выберите категорию</label>
-        </div>
+    <form asp-controller="Record" asp-action="Record" method="post" class="form">
 
         <p>
             <label>
-                <input class="with-gap"
+                <input asp-for="IsIncome" class="with-gap"
                        name="type"
                        type="radio"
                        value="income" />
@@ -26,7 +18,7 @@
 
         <p>
             <label>
-                <input class="with-gap"
+                <input asp-for="IsIncome" class="with-gap"
                        name="type"
                        type="radio"
                        value="outcome" />
@@ -35,17 +27,18 @@
         </p>
 
         <div class="input-field">
-            <input id="amount"
-                   type="number">
-            <label for="amount">Сумма</label>
-            <span class="helper-text invalid">amount пароль</span>
+            <input asp-for="NameCategory" id="description" type="text" placeholder="Категория">
+            <span asp-validation-for="NameCategory" class="helper-text invalid"></span>
         </div>
 
         <div class="input-field">
-            <input id="description"
-                   type="text">
-            <label for="description">Описание</label>
-            <span class="helper-text invalid">description пароль</span>
+            <input asp-for="Sum" id="amount" type="number" placeholder="Сумма">
+            <span asp-validation-for="Sum" class="helper-text invalid"></span>
+        </div>
+        <div class="input-field">
+            <input asp-for="Discription" id="description" type="text" placeholder="Описание">
+
+            <span asp-validation-for="Discription" class="helper-text invalid"></span>
         </div>
 
         <button class="btn waves-effect waves-light" type="submit">

@@ -42,7 +42,6 @@ C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\NavbarPartial.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\SidebarPartial.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Categories\Categories.cshtml.g.cs
-C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Detail-record\Detail-record.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\History\History.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Planning\Planning.cshtml.g.cs
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Profile\Profile.cshtml.g.cs
@@ -101,3 +100,4 @@ C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\IdentitySer
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\IdentityServer4.Storage.dll
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Shared\SideWarpPartial.cshtml.g.cs
+C:\Users\User\Desktop\Prodject complite\MyCRM\MyCRM\obj\Debug\net5.0\Razor\Views\Detail_record\Detail_record.cshtml.g.cs

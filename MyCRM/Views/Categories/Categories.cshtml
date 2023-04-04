@@ -1,4 +1,4 @@
-﻿
+﻿@model CategoryViewModel
 
 <div>
     <div class="page-title">
@@ -12,19 +12,15 @@
                         <h4>Создать</h4>
                     </div>
 
-                    <form>
+                    <form asp-controller="Categories", asp-action="CreateCategory" method="post">
                         <div class="input-field">
-                            <input id="name"
-                                   type="text">
-                            <label for="name">Название</label>
-                            <span class="helper-text invalid">Введите название</span>
+                            <input asp-for="CreateCategoryName" id="name" type="text" placeholder="Название">
+                            <span asp-validation-for="CreateCategoryName" class="helper-text invalid"></span>
                         </div>
 
                         <div class="input-field">
-                            <input id="limit"
-                                   type="number">
-                            <label for="limit">Лимит</label>
-                            <span class="helper-text invalid">Минимальная величина</span>
+                            <input  asp-for="CreateCategoryLimit" id="limit" type="number" placeholder="Лимит">
+                            <span asp-validation-for="CreateCategoryLimit" class="helper-text invalid"></span>
                         </div>
 
                         <button class="btn waves-effect waves-light" type="submit">
@@ -40,25 +36,16 @@
                         <h4>Редактировать</h4>
                     </div>
 
-                    <form>
+                    <form asp-controller="Categories", asp-action="EditCategory" method="post">
+
                         <div class="input-field">
-                            <select>
-                                <option>Category</option>
-                            </select>
-                            <label>Выберите категорию</label>
+                            <input  asp-for="EditCategoryName" type="text" id="name" placeholder="Название">
+                            <span asp-validation-for="EditCategoryName" class="helper-text invalid"></span>
                         </div>
 
                         <div class="input-field">
-                            <input type="text" id="name">
-                            <label for="name">Название</label>
-                            <span class="helper-text invalid">TITLE</span>
-                        </div>
-
-                        <div class="input-field">
-                            <input id="limit"
-                                   type="number">
-                            <label for="limit">Лимит</label>
-                            <span class="helper-text invalid">LIMIT</span>
+                            <input  asp-for="EditCategoryLimit" id="limit "type="number" placeholder="Лимит">
+                            <span asp-validation-for="EditCategoryLimit" class="helper-text invalid"></span>
                         </div>
 
                         <button class="btn waves-effect waves-light" type="submit">

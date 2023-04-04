@@ -25,6 +25,9 @@ namespace MyCRM{
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IAllUsers, UsersReposetory>();
+            services.AddTransient<IAllCategories, CategoriesReposetory>();
+            services.AddTransient<IAllRecords, RecordReposetory>();
+
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -61,7 +64,7 @@ namespace MyCRM{
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute("defult", "{controller=Home}/{action=Home}/{id?}");
                 endpoints.MapControllerRoute("defult", "{controller=Categories}/{action=Categories}/{id?}");
-                endpoints.MapControllerRoute("defult", "{controller=Detail_record}/{action=Detail_record}/{id?}");
+                endpoints.MapControllerRoute("categoryFilter", "Detail_record/{action}/{ID?}");
                 endpoints.MapControllerRoute("defult", "{controller=History}/{action=History}/{id?}");
                 endpoints.MapControllerRoute("defult", "{controller=Login}/{action=Login}/{id?}");
                 endpoints.MapControllerRoute("defult", "{controller=Planning}/{action=Planning}/{id?}");
