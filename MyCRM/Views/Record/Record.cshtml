@@ -8,20 +8,14 @@
 
         <p>
             <label>
-                <input asp-for="IsIncome" class="with-gap"
-                       name="type"
-                       type="radio"
-                       value="income" />
+                <input type="radio" value="True" asp-for="IsIncome" class="with-gap" checked/>
                 <span>Доход</span>
             </label>
         </p>
 
         <p>
             <label>
-                <input asp-for="IsIncome" class="with-gap"
-                       name="type"
-                       type="radio"
-                       value="outcome" />
+                <input type="radio" value="False" asp-for="IsIncome" class="with-gap" />
                 <span>Расход</span>
             </label>
         </p>

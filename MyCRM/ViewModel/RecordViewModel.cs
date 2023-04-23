@@ -17,5 +17,6 @@ namespace MyCRM.ViewModel{
         public int Sum { get; set; }
 
         public bool IsIncome { get; set; }
+        public bool InIncome { get; set; }
     }
 }

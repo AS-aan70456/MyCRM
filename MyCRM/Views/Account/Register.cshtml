@@ -32,9 +32,12 @@
         </div>
         <p>
             <label>
-                <input type="checkbox" />
+                <input type="checkbox" asp-for="IsCheckBox" />
                 <span>С правилами согласен</span>
             </label>
+        </p>
+        <p>
+            <span asp-validation-for="IsCheckBox" class="helper-text invalid"></span>
         </p>
     </div>
     <div class="card-action">

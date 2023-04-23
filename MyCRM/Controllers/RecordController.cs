@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyCRM.Controllers{
     [Authorize]
-    public class RecordController : Controller{
+    public class RecordController : Controller {
 
         private IAllRecords allRecords;
         private IAllCategories allCategories;
@@ -28,13 +28,21 @@ namespace MyCRM.Controllers{
 
         [HttpPost]
         public IActionResult Record(RecordViewModel model) {
-            IQueryable<Domain.Entity.Categori> ArrCategories = allCategories.GetCategoriesByUserId(allUsers.GetUserByName(User.Identity.Name).id);
             if (!ModelState.IsValid) return View();
-            if (model.IsIncome == null) model.IsIncome = false;
-            if (ArrCategories.FirstOrDefault(x => x.Name == model.NameCategory) == null){
+
+            User MeUser = allUsers.GetUserByName(User.Identity.Name);
+
+            IQueryable<Domain.Entity.Categori> ArrCategories = allCategories.GetCategoriesByUserId(MeUser.id);
+
+            Categori Categoy = ArrCategories.FirstOrDefault(x => x.Name == model.NameCategory);
+
+            if (Categoy == null){
                 ModelState.AddModelError("NameCategory", "Такой катигории нет");
                 return View();
             }
+
+            
+
             Record newRecord = new Record() {
                 UserId = allUsers.GetUserByName(User.Identity.Name).id,
                 NameCategory = model.NameCategory,
@@ -44,6 +52,13 @@ namespace MyCRM.Controllers{
                 Pirse = model.Sum
             };
 
+            if (model.IsIncome)
+                MeUser.bill += model.Sum;
+            else
+                MeUser.bill -= model.Sum;
+
+            Categoy.bill += model.Sum;
+            allUsers.SaveUser(MeUser);
             allRecords.SaveRecords(newRecord);
 
             return View();

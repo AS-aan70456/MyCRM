@@ -56,6 +56,11 @@ namespace MyCRM.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
+            if (model.IsCheckBox == false) {
+                ModelState.AddModelError("IsCheckBox", "Откажитесь от души))))))))))");
+                return View(model);
+            }
+
             var user = UsersRep.GetUser().FirstOrDefault(i => i.Name == model.UserName);
             if (user != null) {
                 ModelState.AddModelError("UserName", "Логин уже занят");

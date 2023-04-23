@@ -14,12 +14,12 @@
                         @el.bill из @el.Limit
                     </p>
                     <div class="progress">
-                        @if (((float)el.bill) / ((float)el.Limit) < 0.4)
+                        @if (((float)Math.Abs(el.bill)) / ((float)el.Limit) < 0.4)
                         {
-                            <div class="determinate green" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
+                            <div class="determinate green" style="width:@($"{(el.bill / el.Limit) * 100}%")"></div>
                         }
-                        else if (((float)el.bill) / ((float)el.Limit) > 0.8){
-                            <div class="determinate red" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
+                        else if (((float)Math.Abs(el.bill)) / ((float)el.Limit) > 0.8){
+                            <div class="determinate red" style="width:@($"{(el.bill / el.Limit) * 100}%")"></div>
                         }else {
                             <div class="determinate yellow" style="width:@($"{((((float)el.bill) / ((float)el.Limit)) * 100)}%")"></div>
                         }

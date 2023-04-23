@@ -21,5 +21,8 @@ namespace MyCRM.ViewModel{
 
         [Required(ErrorMessage ="Укажте email")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Отречитесь от своей души")]
+        public bool IsCheckBox { get; set; }
     }
 }

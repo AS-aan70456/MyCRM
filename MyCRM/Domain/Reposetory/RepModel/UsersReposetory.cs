@@ -1,8 +1,8 @@
-﻿using MyCRM.Domain.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using MyCRM.Domain.Entity;
 using MyCRM.Domain.Reposetory.interfeises;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,13 +30,12 @@ namespace MyCRM.Domain.Reposetory.RepModel{
             context.Users.Remove(new User() { id = id });
         }
 
-        public void SaveUser(User newCategory){
-            if (newCategory.id == default){
-                context.Entry(newCategory).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Added;
-            }
-            else{
-                context.Entry(newCategory).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Modified;
-            }
+        public void SaveUser(User User){
+            if (User.id == default)
+                context.Entry(User).State = EntityState.Added;
+            else
+                context.Entry(User).State = EntityState.Modified;
+            
             context.SaveChanges();
         }
     }
