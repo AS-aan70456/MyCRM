@@ -8,24 +8,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyCRM.Controllers{
+namespace MyCRM.Controllers
+{
     [Authorize]
-    public class PlanningController : Controller{
-
+    public class PlanningController : Controller
+    {
         private IAllCategories allCategories;
         private IAllUsers allUsers;
 
-        public PlanningController(IAllCategories allCategories, IAllUsers allUsers) {
+        public PlanningController(IAllCategories allCategories, IAllUsers allUsers)
+        {
             this.allCategories = allCategories;
             this.allUsers = allUsers;
         }
 
-        public IActionResult Planning(){
+        // Display the planning page with user's categories and total planned money
+        public IActionResult Planning()
+        {
             IQueryable<Domain.Entity.Categori> ArrCategories = allCategories.GetCategoriesByUserId(allUsers.GetUserByName(User.Identity.Name).id);
-            PlanningViewModel model = new PlanningViewModel(){
+            PlanningViewModel model = new PlanningViewModel()
+            {
                 allCategory = ArrCategories
             };
-            foreach (var el in ArrCategories)model.planmoney += el.bill;
+            foreach (var el in ArrCategories)
+                model.planmoney += el.bill;
             return View(model);
         }
     }

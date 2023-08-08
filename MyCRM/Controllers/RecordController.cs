@@ -8,43 +8,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyCRM.Controllers{
+namespace MyCRM.Controllers
+{
     [Authorize]
-    public class RecordController : Controller {
-
+    public class RecordController : Controller
+    {
         private IAllRecords allRecords;
         private IAllCategories allCategories;
         private IAllUsers allUsers;
 
-        public RecordController(IAllRecords allRecords, IAllCategories allCategories, IAllUsers allUsers) {
+        public RecordController(IAllRecords allRecords, IAllCategories allCategories, IAllUsers allUsers)
+        {
             this.allRecords = allRecords;
             this.allCategories = allCategories;
             this.allUsers = allUsers;
         }
 
-
+        // Display the record page
         [HttpGet]
         public IActionResult Record() => View();
 
+        // Create a new record based on the form input
         [HttpPost]
-        public IActionResult Record(RecordViewModel model) {
+        public IActionResult Record(RecordViewModel model)
+        {
             if (!ModelState.IsValid) return View();
 
-            User MeUser = allUsers.GetUserByName(User.Identity.Name);
+            User currentUser = allUsers.GetUserByName(User.Identity.Name);
 
-            IQueryable<Domain.Entity.Categori> ArrCategories = allCategories.GetCategoriesByUserId(MeUser.id);
+            IQueryable<Domain.Entity.Categori> userCategories = allCategories.GetCategoriesByUserId(currentUser.id);
 
-            Categori Categoy = ArrCategories.FirstOrDefault(x => x.Name == model.NameCategory);
+            Categori selectedCategory = userCategories.FirstOrDefault(x => x.Name == model.NameCategory);
 
-            if (Categoy == null){
-                ModelState.AddModelError("NameCategory", "Такой катигории нет");
+            if (selectedCategory == null)
+            {
+                ModelState.AddModelError("NameCategory", "Such category does not exist");
                 return View();
             }
 
-            
-
-            Record newRecord = new Record() {
-                UserId = allUsers.GetUserByName(User.Identity.Name).id,
+            Record newRecord = new Record()
+            {
+                UserId = currentUser.id,
                 NameCategory = model.NameCategory,
                 DataCreate = DateTime.Now.ToString(),
                 Income = model.IsIncome,
@@ -53,17 +57,15 @@ namespace MyCRM.Controllers{
             };
 
             if (model.IsIncome)
-                MeUser.bill += model.Sum;
+                currentUser.bill += model.Sum;
             else
-                MeUser.bill -= model.Sum;
+                currentUser.bill -= model.Sum;
 
-            Categoy.bill += model.Sum;
-            allUsers.SaveUser(MeUser);
+            selectedCategory.bill += model.Sum;
+            allUsers.SaveUser(currentUser);
             allRecords.SaveRecords(newRecord);
 
             return View();
         }
-
-
     }
 }
